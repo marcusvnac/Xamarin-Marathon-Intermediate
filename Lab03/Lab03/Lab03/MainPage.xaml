@@ -4,59 +4,18 @@
              xmlns:local="clr-namespace:Lab03"
              x:Class="Lab03.MainPage">
 
-    <ScrollView>
-        <StackLayout Spacing="100">
-	        <Label Text="Welcome to Xamarin Forms!" 
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center" 
-                   TextColor="{StaticResource danger}"/>
+    <StackLayout>
+        <Button x:Name="btnCarregar"
+                Text="Carregar"
+                TextColor="{StaticResource success}" />
 
-            <Label Text="Podemos colocar no BackgroundColor"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   BackgroundColor="{StaticResource warning}"
-                   TextColor="{StaticResource info}" />
-
-            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
-
-            <Label Text="Welcome to Xamarin Forms!" 
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center" 
-                   TextColor="{StaticResource danger}"/>
-
-            <Label Text="Podemos colocar no BackgroundColor"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   BackgroundColor="{StaticResource warning}"
-                   TextColor="{StaticResource info}" />
-
-            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
-
-            <Label Text="Welcome to Xamarin Forms!" 
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center" 
-                   TextColor="{StaticResource danger}"/>
-
-            <Label Text="Podemos colocar no BackgroundColor"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   BackgroundColor="{StaticResource warning}"
-                   TextColor="{StaticResource info}" />
-
-            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
-
-            <Label Text="Welcome to Xamarin Forms!" 
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center" 
-                   TextColor="{StaticResource danger}"/>
-
-            <Label Text="Podemos colocar no BackgroundColor"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   BackgroundColor="{StaticResource warning}"
-                   TextColor="{StaticResource info}" />
-
-            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
-        </StackLayout>
-    </ScrollView>
+        <ListView x:Name="lvwTags">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

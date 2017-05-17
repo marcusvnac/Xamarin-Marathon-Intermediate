@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab03.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,12 @@ namespace Lab03
         public MainPage()
         {
             InitializeComponent();
+
+            btnCarregar.Clicked += async (sender, e) =>
+            {
+                var tags = await Api.GetTagsAsync();
+                lvwTags.ItemsSource = tags;
+            };
         }
     }
 }
