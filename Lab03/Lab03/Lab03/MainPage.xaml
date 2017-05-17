@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Lab03"
+             x:Class="Lab03.MainPage">
+
+    <ScrollView>
+        <StackLayout Spacing="100">
+	        <Label Text="Welcome to Xamarin Forms!" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   TextColor="{StaticResource danger}"/>
+
+            <Label Text="Podemos colocar no BackgroundColor"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   BackgroundColor="{StaticResource warning}"
+                   TextColor="{StaticResource info}" />
+
+            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
+
+            <Label Text="Welcome to Xamarin Forms!" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   TextColor="{StaticResource danger}"/>
+
+            <Label Text="Podemos colocar no BackgroundColor"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   BackgroundColor="{StaticResource warning}"
+                   TextColor="{StaticResource info}" />
+
+            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
+
+            <Label Text="Welcome to Xamarin Forms!" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   TextColor="{StaticResource danger}"/>
+
+            <Label Text="Podemos colocar no BackgroundColor"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   BackgroundColor="{StaticResource warning}"
+                   TextColor="{StaticResource info}" />
+
+            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
+
+            <Label Text="Welcome to Xamarin Forms!" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   TextColor="{StaticResource danger}"/>
+
+            <Label Text="Podemos colocar no BackgroundColor"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   BackgroundColor="{StaticResource warning}"
+                   TextColor="{StaticResource info}" />
+
+            <Button TextColor="{StaticResource success}" Text="Sucesso!" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
