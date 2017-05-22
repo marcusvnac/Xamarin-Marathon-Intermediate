@@ -4,8 +4,18 @@
              xmlns:local="clr-namespace:Lab04"
              x:Class="Lab04.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout 
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <Button Text="Logar com Facebook"
+                BackgroundColor="Blue"
+                FontSize="Medium"
+                TextColor="White"
+                x:Name="LoginButton" />
+        <Label 
+            TextColor="Black"
+            FontSize="Medium"
+            x:Name="InfoLabel" />
 
+    </StackLayout>
 </ContentPage>
