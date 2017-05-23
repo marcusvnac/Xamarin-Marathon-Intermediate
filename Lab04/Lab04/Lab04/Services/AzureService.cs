@@ -7,7 +7,7 @@ namespace Lab04.Services
 {
     public class AzureService
     {
-        static readonly string AppUrl = "https://labmarcuscoutomaratonaxamarin.azurewebsites.net/";
+        static readonly string AppUrl = "https://xamarinmarathonintermediate.azurewebsites.net/";
 
         public MobileServiceClient Client { get; set; } = null;
 
