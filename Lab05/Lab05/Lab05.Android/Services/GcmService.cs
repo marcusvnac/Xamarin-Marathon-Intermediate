@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Diagnostics;
 
 using Android.App;
 using Android.Content;
+using Android.Media;
+using Android.Support.V7.App;
+using Android.Util;
+
 using Gcm.Client;
 using Microsoft.WindowsAzure.MobileServices;
-using Android.Util;
 using Newtonsoft.Json.Linq;
-using System.Diagnostics;
-using Android.Support.V4.App;
-using Android.Media;
 
 [assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
@@ -35,7 +36,7 @@ namespace Lab05.Droid.Services
     public class GcmService : GcmServiceBase
     {
 
-        MobileServiceClient client = new MobileServiceClient("http://xamarinmarathonintermediate.azurewebsites.net/");
+        MobileServiceClient client = new MobileServiceClient("https://xamarinmarathonintermediate.azurewebsites.net/");
         public static string RegistrationID { get; private set; }
         public GcmService() : base(PushHandlerBroadcastReceiver.SENDER_IDS) { }
 
@@ -49,11 +50,11 @@ namespace Lab05.Droid.Services
                     msg.AppendLine(key + "=" + intent.Extras.Get(key).ToString());
             }
             //Store the message
-            var prefs = GetSharedPreferences(context.PackageName,
-           FileCreationMode.Private);
+            var prefs = GetSharedPreferences(context.PackageName, FileCreationMode.Private);
             var edit = prefs.Edit();
             edit.PutString("last_msg", msg.ToString());
             edit.Commit();
+
             string message = intent.Extras.GetString("message");
             if (!string.IsNullOrEmpty(message))
             {
@@ -71,19 +72,22 @@ namespace Lab05.Droid.Services
 
         protected override void OnError(Context context, string errorId)
         {
-            Log.Error("PushHandlerBroadcastReceiver", "GCM Error: " + errorId);        }
+            Log.Error("PushHandlerBroadcastReceiver", "GCM Error: " + errorId);
+        }
 
         protected override void OnRegistered(Context context, string registrationId)
         {
             Log.Verbose("PushHandlerBroadcastReceiver", "GCM Registered: " +  registrationId);
             RegistrationID = registrationId;
             var push = client.GetPush();
-            MainActivity.CurrentActivity.RunOnUiThread(() => Register(push, null));
+            MainActivity.CurrentActivity.RunOnUiThread(() => Register(push, null));
+
         }
 
         protected override void OnUnRegistered(Context context, string registrationId)
         {
-            Log.Error("PushHandlerBroadcastReceiver", "Unregistered RegisterationId :" + registrationId);        }
+            Log.Error("PushHandlerBroadcastReceiver", "Unregistered RegisterationId :" + registrationId);
+        }
 
         public async void Register(Push push, IEnumerable<string> tags)
         {
@@ -129,6 +133,8 @@ namespace Lab05.Droid.Services
                 .SetAutoCancel(true).Build();
                 //Show the notification
 
-            notificationManager.Notify(1, notification);        }
+            notificationManager.Notify(1, notification);
+        }
+
     }
 }

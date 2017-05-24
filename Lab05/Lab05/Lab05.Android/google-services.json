@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "524649892212",
+    "firebase_url": "https://maratonaxamarinintermediario.firebaseio.com",
+    "project_id": "maratonaxamarinintermediario",
+    "storage_bucket": "maratonaxamarinintermediario.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524649892212:android:e4af598bd2489432",
+        "android_client_info": {
+          "package_name": "com.marathonaxamarin.intermediario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524649892212-50boiqtkrnab52mfv4cqjh2vdnl6h821.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK7SDVqJnjcXcMbkSFWWrwUcnzdpAuX60"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
