@@ -1,18 +1,18 @@
-﻿using AppExam.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace AppExam
 {
-    public partial class MainPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AboutPage : ContentPage
     {
-        private MainViewModel ViewModel => BindingContext as MainViewModel;
-
-        public MainPage()
+        public AboutPage()
         {
             InitializeComponent();
         }

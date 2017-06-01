@@ -13,7 +13,7 @@ namespace AppExam
         {
             InitializeComponent();
 
-            MainPage = new AppExam.MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
