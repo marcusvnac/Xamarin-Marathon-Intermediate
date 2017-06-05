@@ -9,6 +9,13 @@ namespace AppExam.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        private string _title;
+        public string Title
+        {
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

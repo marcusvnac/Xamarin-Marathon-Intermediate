@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppExam.AboutPage">
-</ContentPage>
+<base:BasePage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:AppExam;assembly=AppExam"
+    x:Class="AppExam.AboutPage">
+
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Versão">
+                <TextCell Text="{Binding Versao}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</base:BasePage>

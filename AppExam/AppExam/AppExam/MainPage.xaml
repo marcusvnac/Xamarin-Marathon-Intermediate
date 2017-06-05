@@ -1,15 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AppExam"
-             x:Class="AppExam.MainPage"
-             Title="Fidelidade Brigaderia">
+<base:BasePage  
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:AppExam;assembly=AppExam"
+    x:Class="AppExam.MainPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Sobre" Command="{Binding AboutCommand}"/>
     </ContentPage.ToolbarItems>
-    
-    <Label Text="Welcome to Xamarin Forms!" 
+
+    <StackLayout VerticalOptions="Center">
+        <Label Text="{Binding TextWelcome}" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
-</ContentPage>
+        <Button Text="Entrar com Facebook"
+                Command="{Binding FacebookLogonCommand}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" 
+                BackgroundColor="LightBlue"
+                TextColor="Wheat"/>
+
+        <Label TextColor="Black"
+               FontSize="Medium"
+               Text="{Binding LogonInfo}"/>
+
+    </StackLayout>
+</base:BasePage>
