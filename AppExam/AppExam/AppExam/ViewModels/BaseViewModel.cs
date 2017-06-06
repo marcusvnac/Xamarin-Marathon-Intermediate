@@ -53,6 +53,11 @@ namespace AppExam.ViewModels
             await Application.Current.MainPage.Navigation.PushAsync(page);
         }
 
+        public virtual Task LoadAsync()
+        {
+            return Task.FromResult(0);
+        }
+
         public async Task DisplayAlert(string title, string message, string cancel)
         {
             await Application.Current.MainPage.DisplayAlert(title, message, cancel);

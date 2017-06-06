@@ -10,5 +10,6 @@ namespace AppExam.Models
     {
         public string FullName { get; set; }
         public string Token { get; set; }
+
     }
 }

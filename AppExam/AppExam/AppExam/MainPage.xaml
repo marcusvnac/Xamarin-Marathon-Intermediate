@@ -17,8 +17,8 @@
                 Command="{Binding FacebookLogonCommand}"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" 
-                BackgroundColor="LightBlue"
-                TextColor="Wheat"/>
+                BackgroundColor="Blue"
+                TextColor="White"/>
 
         <Label TextColor="Black"
                FontSize="Medium"

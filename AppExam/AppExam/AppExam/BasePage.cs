@@ -14,7 +14,8 @@ namespace AppExam
     
 			if (ViewModel == null) return;
             Title = ViewModel.Title;
-            ViewModel.PropertyChanged += TitlePropertyChanged;            
+            ViewModel.PropertyChanged += TitlePropertyChanged;
+            await ViewModel.LoadAsync();
         }
 
         private void TitlePropertyChanged(object sender, PropertyChangedEventArgs e)
