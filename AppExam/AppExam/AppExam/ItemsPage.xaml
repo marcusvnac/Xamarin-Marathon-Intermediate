@@ -4,9 +4,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:base="clr-namespace:AppExam;assembly=AppExam"    
     x:Class="AppExam.ItemsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding QuantidadeItens}" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <ListView
+        HasUnevenRows="True"
+        SeparatorVisibility="None"
+        ItemsSource="{Binding UserCoupons}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Padding="0">
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding CouponType}" 
+                                   Margin="20, 10, 20, 0"
+								   FontAttributes="Bold" 
+                                   FontSize="Medium" />
+                            <Label Text="{Binding Amount}"
+                                   Margin="20, 5, 20, 15"
+                                   TextColor="Silver"
+                                   FontSize="Medium" />
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </base:BasePage>

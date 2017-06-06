@@ -13,7 +13,7 @@
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
-        <Button Text="Entrar com Facebook"
+        <Button Text="{Binding FacebookButtonText}"
                 Command="{Binding FacebookLogonCommand}"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" 

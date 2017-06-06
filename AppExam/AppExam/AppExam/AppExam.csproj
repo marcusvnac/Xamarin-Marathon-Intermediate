@@ -50,9 +50,10 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserCoupons.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Repository.cs" />
+    <Compile Include="Models\Coupon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AzureDataService.cs" />
     <Compile Include="Services\AzureService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />

@@ -16,6 +16,11 @@ namespace AppExam.ViewModels
 
         public string TextWelcome { get { return "Olá, bem vindo! Efetue logon abaixo para entrar."; }  }
 
+        public string FacebookButtonText
+        {
+            get { return "Logar com Facebook"; }
+        }
+
         public string LogonInfo
         {
             get { return _logonInfo; }
@@ -23,6 +28,7 @@ namespace AppExam.ViewModels
             {
                 _logonInfo = value;
                 OnPropertyChanged();
+                FacebookLogonCommand.ChangeCanExecute();
             }
         }
 
@@ -39,7 +45,10 @@ namespace AppExam.ViewModels
             user = await azureService.LoginAsync();
 
             if (user != null)
+            {
                 await PushAsync<ItemsViewModel>();
+                LogonInfo = "Bem vindo. Clique no botão abaixo para entrar.";
+            }
             else
                 LogonInfo = "Falha no login, tente novamente!";
         }

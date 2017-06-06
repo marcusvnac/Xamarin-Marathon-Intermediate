@@ -1,5 +1,4 @@
-﻿using AppExam;
-using AppExam.Authentication;
+﻿using AppExam.Authentication;
 using AppExam.Helpers;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
@@ -11,15 +10,13 @@ namespace AppExam.Services
     {
         public MobileServiceClient Client { get; set; } = null;
 
-        public void Initialize()
+        public AzureService()
         {
             Client = new MobileServiceClient(Constants.AzureAppUrl);
         }
-
+                
         public async Task<MobileServiceUser> LoginAsync()
         {
-            Initialize();
-
             var auth = DependencyService.Get<IAuthenticate>();
             var user = await auth.Authenticate(Client, MobileServiceAuthenticationProvider.Facebook);
 

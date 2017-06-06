@@ -1,27 +1,40 @@
 ﻿using AppExam.Models;
+using AppExam.Services;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace AppExam.ViewModels
 {
     public class ItemsViewModel :  BaseViewModel
     {
-        private List<UserCoupon> coupons;
-        private int _quantidade = 10;
-        public string QuantidadeItens { get { return $"Você possui {_quantidade} cupons"; } }
+        public ObservableCollection<Coupon> UserCoupons { get; }
 
         public ItemsViewModel()
         {
-            coupons = new List<UserCoupon>();
+            UserCoupons = new ObservableCollection<Coupon>();
 
             Title = "Meus Cupons";
         }
 
         public override async Task LoadAsync()
         {
-            // Mock
-            coupons.Add(new UserCoupon("Brigadeiro", 10));
-            coupons.Add(new UserCoupon("Cajuzinho", 5));
+            try
+            {
+                UserCoupons.Clear();
+                var repo = new Repository();
+                var coupons = await repo.GetCoupons();
+
+                foreach (var item in coupons)
+                {
+                    UserCoupons.Add(item);
+                }
+            }
+            catch(Exception e)
+            {
+                await DisplayAlert("Erro!", $"Erro ao recuperar dados dos cupons. Detalhes do erro: {e.Message}", "Fechar");                
+            }
         }
     }
 }

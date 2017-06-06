@@ -8,7 +8,7 @@ namespace AppExam
     {
         private BaseViewModel ViewModel => BindingContext as BaseViewModel;
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
     
