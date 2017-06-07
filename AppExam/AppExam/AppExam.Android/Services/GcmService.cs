@@ -6,7 +6,7 @@ using System.Diagnostics;
 using Android.App;
 using Android.Content;
 using Android.Media;
-using Android.Support.V7.App;
+using Android.Support.V4.App;
 using Android.Util;
 
 using Gcm.Client;
@@ -55,16 +55,17 @@ namespace AppExam.Droid.Services
             edit.PutString("last_msg", msg.ToString());
             edit.Commit();
 
+            string messageTitle = "Cupom da Doceria!";
             string message = intent.Extras.GetString("message");
             if (!string.IsNullOrEmpty(message))
             {
-                CreateNotification("Cupom da Doceria!", "Nova Mensagem: " + message);
+                CreateNotification(messageTitle, message);
                 return;
             }
             string msg2 = intent.Extras.GetString("msg");
             if (!string.IsNullOrEmpty(msg2))
             {
-                CreateNotification("New hub message!", msg2);
+                CreateNotification(messageTitle, msg2);
                 return;
             }
             CreateNotification("Unknown message details", msg.ToString());

@@ -8,7 +8,7 @@
     <TableView Intent="Menu">
         <TableRoot>
             <TableSection Title="Versão">
-                <TextCell Text="{Binding Versao}" />
+                <TextCell Text="{Binding Version}" />
             </TableSection>
         </TableRoot>
     </TableView>
