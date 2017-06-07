@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BasePage  
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:AppExam;assembly=AppExam"
+    x:Class="AppExam.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sobre" Command="{Binding AboutCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout VerticalOptions="Center">
+        <Label Text="{Binding TextWelcome}" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+
+        <Button Text="{Binding FacebookButtonText}"
+                Command="{Binding FacebookLogonCommand}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" 
+                BackgroundColor="Blue"
+                TextColor="White"/>
+
+        <Label TextColor="Black"
+               FontSize="Medium"
+               Text="{Binding LogonInfo}"/>
+
+    </StackLayout>
+</base:BasePage>
